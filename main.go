@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/aws/aws-lambda-go/lambda"
 
-	"github.com/gabriel-dantas98/golang-lambda-scaffolder/handler"
+	"gabriel-dantas98/golang-lambda-scaffolder/cmd/handler"
 )
 
 func main() {

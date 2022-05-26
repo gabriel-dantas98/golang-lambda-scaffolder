@@ -4,8 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/gabriel-dantas98/golang-lambda-scaffolder/pkg/shouldideploy"
+	"gabriel-dantas98/golang-lambda-scaffolder/pkg/shouldideploy"
 )
 
 type Event struct {
@@ -21,11 +20,7 @@ type Response struct {
 func HandleLambdaEvent(ctx context.Context, event Event) (Response, error) {
 	fmt.Println("incoming event", event)
 
-	message, err := shouldideploy.Request()
+	response, err := shouldideploy.Request()
 
-	return Response{Message: message}, err
-}
-
-func main() {
-	lambda.Start(HandleLambdaEvent)
+	return Response{Message: response.Message}, err
 }
