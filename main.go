@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/aws/aws-lambda-go/lambda"
-
-	"gabriel-dantas98/golang-lambda-scaffolder/cmd/handler"
+	// "gabriel-dantas98/golang-lambda-scaffolder/cmd/handler"
+	"gabriel-dantas98/golang-lambda-scaffolder/cmd/cli"
 )
 
 func main() {
-	lambda.Start(handler.HandleLambdaEvent)
+	// lambda.Start(handler.HandleLambdaEvent)
+	cli.Exec()
 }

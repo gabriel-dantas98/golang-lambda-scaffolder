@@ -22,5 +22,9 @@ func HandleLambdaEvent(ctx context.Context, event Event) (Response, error) {
 
 	response, err := shouldideploy.Request()
 
-	return Response{Message: response.Message}, err
+	if err != nil {
+		panic(err)
+	}
+
+	return Response{Message: response.Message}, nil
 }
